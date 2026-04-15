@@ -1,0 +1,29 @@
+{
+  "name": "bythanh-chatbot-test",
+  "version": "1.0.0",
+  "description": "Playwright + Promptfoo automation test suite for bythanh.com chatbot",
+  "scripts": {
+    "test": "node ./node_modules/@playwright/test/cli.js test --workers=1",
+    "test:ui": "node ./node_modules/@playwright/test/cli.js test tests/ui/ui.spec.ts --workers=1",
+    "test:content": "node ./node_modules/@playwright/test/cli.js test tests/content --workers=1",
+    "test:api": "node ./node_modules/@playwright/test/cli.js test tests/api/api-chatbot.spec.ts --workers=1",
+    "test:headed": "node ./node_modules/@playwright/test/cli.js test --headed --workers=1",
+    "test:report": "node ./node_modules/@playwright/test/cli.js show-report",
+    "build:promptfoo-provider": "esbuild promptfoo/provider.ts --bundle --platform=node --format=cjs --outfile=promptfoo/provider.bundle.cjs --external:@playwright/test",
+    "eval": "npm run build:promptfoo-provider && node --require dotenv/config ./node_modules/promptfoo/dist/src/main.js eval --config promptfooconfig.yaml",
+    "eval:view": "node --require dotenv/config ./node_modules/promptfoo/dist/src/main.js view"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "esbuild": "^0.25.0",
+    "promptfoo": "0.120.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "envTest": "prod",
+    "browser": "chrome",
+    "headlessMode": true,
+    "timeout": 30000,
+    "botTimeout": 120000,
+    "skipPendingTests": true,
+    "skipTests": true,
+    "notStaging": true,
+    "parallelism": {
+        "acceptance": 2,
+        "api": 1
+    },
+    "logLevel": "info",
+    "apiTimeout": 30000,
+    "recordVideo": false,
+    "logging": {
+        "console": true,
+        "file": true,
+        "maxSize": 10,
+        "backups": 5,
+        "timestamp": true
+    }
+}

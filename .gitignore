@@ -1,0 +1,10 @@
+node_modules/
+dist/
+report/
+test-results/
+.env
+*.local
+.promptfoo/
+promptfoo/provider.bundle.cjs
+.claude/
+.vscode/
